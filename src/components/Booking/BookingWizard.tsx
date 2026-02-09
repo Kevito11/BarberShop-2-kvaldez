@@ -381,12 +381,24 @@ export default function BookingWizard({ isOpen, onClose }: BookingWizardProps) {
                                         ].join('\\r\\n');
 
                                         const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-                                        const link = document.createElement('a');
-                                        link.href = window.URL.createObjectURL(blob);
-                                        link.setAttribute('download', 'cita-barberia.ics');
-                                        document.body.appendChild(link);
-                                        link.click();
-                                        document.body.removeChild(link);
+                                        const url = window.URL.createObjectURL(blob);
+
+                                        // Detect Safari/iOS
+                                        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                                        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+                                        if (isSafari || isIOS) {
+                                            // Safari/iOS doesn't handle the download attribute well with Blobs.
+                                            // Opening in new window allows the OS to handle the ICS file (Add to Calendar prompt)
+                                            window.open(url, '_blank');
+                                        } else {
+                                            const link = document.createElement('a');
+                                            link.href = url;
+                                            link.setAttribute('download', 'cita-barberia.ics');
+                                            document.body.appendChild(link);
+                                            link.click();
+                                            document.body.removeChild(link);
+                                        }
                                     }}
                                     className="calendar-btn"
                                     style={{
