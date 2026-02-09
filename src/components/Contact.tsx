@@ -19,18 +19,32 @@ export default function Contact() {
                     {/* Left: Info */}
                     <div className="contact-left">
                         <div className="info-item-large">
-                            <FaMapMarkerAlt className="icon" />
-                            <div>
-                                <h3>Ubicación</h3>
-                                <p>Felipe IV 4 Bajo/Amara, San Sebastián</p>
-                            </div>
+                            <a
+                                href="https://maps.app.goo.gl/bb6zoRXXoG5kpNPb9"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', textDecoration: 'none', color: 'inherit' }}
+                            >
+                                <FaMapMarkerAlt className="icon" />
+                                <div>
+                                    <h3>Ubicación</h3>
+                                    <p>Felipe IV 4 Bajo/Amara, San Sebastián</p>
+                                </div>
+                            </a>
                         </div>
                         <div className="info-item-large">
-                            <FaPhone className="icon" />
-                            <div>
-                                <h3>Teléfono</h3>
-                                <p>+34 610 92 19 39</p>
-                            </div>
+                            <a
+                                href="https://wa.me/34610921939"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', width: '100%', textDecoration: 'none', color: 'inherit' }}
+                            >
+                                <FaPhone className="icon" />
+                                <div>
+                                    <h3>Teléfono</h3>
+                                    <p>+34 610 92 19 39</p>
+                                </div>
+                            </a>
                         </div>
                         <div className="info-item-large">
                             <FaClock className="icon" />

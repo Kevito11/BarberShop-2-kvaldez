@@ -22,17 +22,7 @@ export default function Hero() {
                 >
                     MAESTRÍA Y TRADICIÓN EN CADA CORTE
                 </motion.p>
-                <motion.a
-                    href="#contacto"
-                    className="btn btn-primary"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    RESERVAR CITA
-                </motion.a>
+
             </div>
         </section>
     );

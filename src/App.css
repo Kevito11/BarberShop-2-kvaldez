@@ -623,7 +623,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
-  color: var(--color-bg);
+  color: white;
 }
 
 .text-green-500 {
@@ -742,4 +742,301 @@ main {
   overflow: hidden;
   margin-bottom: 4rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Booking Modal Styles */
+.booking-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.booking-container {
+  background-color: var(--color-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-primary);
+}
+
+.grid-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.option-btn {
+  background-color: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+/* Solo boton siguiente (alinear a la derecha) */
+.modal-actions.right-only {
+  justify-content: flex-end;
+}
+
+.option-btn:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.option-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  border-color: var(--color-primary);
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.btn-secondary:hover {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Calendar Overrides for Dark Theme */
+.react-calendar {
+  background-color: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-calendar__navigation button {
+  color: white;
+  min-width: 44px;
+  background: none;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.react-calendar__month-view__days__day {
+  color: white;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: #ff5e5e;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.react-calendar__tile--now {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+.react-calendar__tile--active {
+  background: var(--color-primary) !important;
+  color: black !important;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.time-btn {
+  padding: 0.8rem;
+  background-color: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.time-btn:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.time-btn.active {
+  background-color: var(--color-primary);
+  color: black;
+  border-color: var(--color-primary);
+}
+
+.time-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.booking-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.form-group input {
+  padding: 0.8rem;
+  background-color: var(--color-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 4px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.summary-card {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.summary-card p {
+  margin: 0.5rem 0;
+  color: var(--color-text-muted);
+}
+
+.summary-card strong {
+  color: var(--color-primary);
+}
+
+/* Mobile Optimizations for Booking Modal */
+@media (max-width: 640px) {
+  .booking-container {
+    padding: 1rem;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-modal-overlay {
+    padding: 1rem;
+    align-items: center;
+    /* Center again */
+  }
+
+  /* Make content scrollable but keep actions visible */
+  .booking-container>div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Calendar compact mode */
+  .react-calendar__tile {
+    padding: 0.5em 0.2em;
+    font-size: 0.9rem;
+  }
+
+  .time-grid {
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns on mobile */
+    gap: 0.5rem;
+  }
+
+  .time-btn {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Sticky Actions Bar */
+  .modal-actions {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-surface);
+    margin-top: auto;
+    /* Push to bottom */
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    /* Safe area */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 10;
+  }
+
+  .grid-options {
+    grid-template-columns: 1fr;
+    /* Stack options on mobile */
+    gap: 0.5rem;
+  }
+
+  .option-btn {
+    padding: 1rem;
+  }
 }
