@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[context.production.environment]
+  VITE_EMAILJS_PUBLIC_KEY = "3UoB5wH7F4vLGeckU"
+  VITE_EMAILJS_SERVICE_ID = "service_u5653xp"
+  VITE_EMAILJS_TEMPLATE_ID = "template_ib1tyf8"
+  VITE_FIREBASE_API_KEY = "AIzaSyAuhw24A7Q5O_DDBaDc7-Vi-qZTcCol72A"
+  VITE_FIREBASE_AUTH_DOMAIN = "tigrebarbershop-kvaldez.firebaseapp.com"
+  VITE_FIREBASE_PROJECT_ID = "tigrebarbershop-kvaldez"
+  VITE_FIREBASE_STORAGE_BUCKET = "tigrebarbershop-kvaldez.firebasestorage.app"
+  VITE_FIREBASE_MESSAGING_SENDER_ID = "186098824943"
+  VITE_FIREBASE_APP_ID = "1:186098824943:web:8b00122ebe1ee2eb6e8d1a"
